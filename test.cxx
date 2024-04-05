@@ -57,9 +57,4 @@ void test2()
     ASSERT(!DOUBLE_EQ(DAI.qty, 1203.3));
 }
 
-void test3()
-{
-    
-}
-
 }
