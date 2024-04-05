@@ -2,6 +2,10 @@
 
 This project was developed and tested on Centos 7
 
+To build, invoke ./build.sh
+
+To run, invoke ./run.sh
+
 The core uniswap engine was written to be robust rather than performant
 
 I did not have time to research the uniswap protocol extensively so I point out in code assumptions that I make which may diverge from the spec. In particular, it was not super clear to me how the invariant k comes into play when adding liquidity to the pool (if it does at all). It was also unclear to me what the swap fee is a percentage of.
