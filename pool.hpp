@@ -5,6 +5,8 @@
 #include <string>
 #include <cstdint>
 
+#include "observer.hpp"
+
 namespace Test
 {
     struct Nutcracker;
@@ -18,7 +20,7 @@ struct Token
 };
 
 //assumes CFMM
-struct Pool
+struct Pool : public ISubject<Pool>
 {
     // breaks encapsulation to get at the internals of a Pool object
     friend class Test::Nutcracker;
@@ -45,4 +47,5 @@ private:
     
     //token equivalence when adding liquidity
     double tokenEq;
+
 };

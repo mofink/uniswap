@@ -134,4 +134,6 @@ void Pool::swapTokens(const std::string &inputToken, uint64_t inQty)
     std::cout << "[LOG_INFO] After fees the reserves in Pool " << this->poolName << " are: token=" << this->X.name << " qty=" << this->X.qty 
         << "; token=" << this->Y.name << " qty=" <<this->Y.qty << std::endl; 
 
+    // invoke callbacks to all subscribers
+    notify();
 }
