@@ -1,6 +1,6 @@
 # uniswap
 
-This project was developed and tested on Centos 7
+This project was developed and tested using gcc13/Centos 7
 
 To build, invoke ./build.sh
 
