@@ -68,13 +68,13 @@ void test3()
     ASSERT(DAI.qty == 1200.0);
 
     ArbitrageEngine eng(&poolA, &poolB);
+    eng.spawnThread();
 
     poolA.swapTokens("DAI", 3.0);
     ASSERT(ETH.qty == 399.0);
-    ASSERT(!DOUBLE_EQ(DAI.qty, 1203.3));
+    ASSERT(!DOUBLE_EQ(DAI.qty, 1203.3)); 
 
-    
-
+    eng.joinThread();
 }
 
 

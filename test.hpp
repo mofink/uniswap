@@ -7,7 +7,8 @@
 
 namespace Test
 {
-    // used to get at the internals of a Pool object for test
+    // used to get at the internals of a Pool object
+    //should go into its own file but it is late and I don't want to reorg now
     struct Nutcracker
     {
         static const Token& getX(const Pool& p);

@@ -127,7 +127,7 @@ void Pool::swapTokens(const std::string &inputToken, uint64_t inQty)
     outToken->qty -= totalOutQty;
 
     std::cout << "[LOG_INFO] Swapping tokens in Pool: name=" << this->poolName << " inputToken=" << inToken->name << " outputToken=" << outToken->name 
-        << " inQty=" << inQty << " outQty=" << totalOutQty << std::endl;
+       << " inQty=" << inQty << " outQty=" << totalOutQty << std::endl;
 
     inToken->qty += this->swapFee;
 

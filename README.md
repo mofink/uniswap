@@ -14,5 +14,10 @@ test1 -- basic add/remove liquidity operations
 
 test2 -- swap operations
 
-// ToDo
-test3 -- swap operations including arbitrage routine
+test3 -- swap operations including arbitrage routine (runs forever since "market updates" will continue to come in)
+
+To simulate a trading engine hooked into an exchange, I implemented the subject/observer pattern to register callbacks -- the exchange notifies listeners (here, the arbitrage engine) of market updates. In an effort to be somewhat extensible I created generic base classes (virtual interfaces) for Subjects and Observers, avoiding the costs of dynamic polymorphism using the CRTP https://eli.thegreenplace.net/2011/05/17/the-curiously-recurring-template-pattern-in-c/ Next steps would include message types, since a real exchange would presumably want to send updates besides for swap notifications.
+
+I intentionally break encapsulation in the context of testing and receiving messages to simplify the proof-of-concept implementaion (noted in code).
+
+The thread-safe queue was taken from https://stackoverflow.com/a/36763257
